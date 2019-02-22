@@ -11,7 +11,7 @@
 
     var canv= document.getElementById("myCanvas");
     resize();
-    
+    colorback();
     
 function colorback(){
     var ctx = canv.getContext("2d");
@@ -20,6 +20,12 @@ function colorback(){
     ctx.rect(0, 0, canv.width, canv.height);
     ctx.stroke();
     ctx.fill();
+    ctx.moveTo(0,100);
+    ctx.lineTo(canv.width, 100);
+    ctx.strokeStyle="rgba(100, 100, 0, 1)";
+    ctx.stroke();
+    drawText("Lin & Ren Accounting Services",30,65,"bold  50px Times");
+    makeGradient();
 }
   
 function resize(){
@@ -27,6 +33,27 @@ function resize(){
     canv.height= window.innerHeight;
     colorback();
 } 
+    
+function drawText(stringN,x,y,styleX){
+    
+    var ctx = canv.getContext("2d");
+    ctx.fillStyle = "red";
+    ctx.font = styleX;
+    ctx.fillText(stringN, x, y);
+}
+    
+    function makeGradient(){
+        var ctx = canv.getContext("2d");
+
+        // Create gradient
+        var grd = ctx.createLinearGradient(0, 100, 0, canv.height);
+        grd.addColorStop(0, "rgba(240, 165, 0, 1)");
+        grd.addColorStop(1, "rgba(255, 100, 0, 1)");
+
+        // Fill with gradient
+        ctx.fillStyle = grd;
+        ctx.fillRect(0, 101, canv.width, canv.height);
+    }
 
 </script>
 
