@@ -1,5 +1,49 @@
 h1 {
+    
     color: navy;
     margin-left: 40px;
     padding-top:30px;
+    float:left;
+}
+
+ul{
+    list-style-type: none;
+}
+li{
+    width: 200px;
+    float: left;
+    resize: none;
+}
+
+li:hover{
+    
+    color: aqua;
+}
+
+.selections{
+    position: absolute;
+
+    right: 10px;
+    margin-left: 50px;
+    padding-top:45px;
+    float: left;
+    
+}
+#selections{
+    float: left;
+}
+
+footer {
+    position: absolute;
+    left: 0;
+    bottom: 0px;
+    width: 100%;
+    height: 50px;
+    text-align: center;
+    background-color: darkgray;
+}
+.top_panel{
+    width: auto;
+    height: 90;
+    border-bottom: solid;
 }
